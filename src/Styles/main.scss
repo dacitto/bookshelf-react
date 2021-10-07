@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@300;400;500;600;700&display=swap"); // import Rubik font for body and Righteous for logo font
+:root {
+  --black: hsl(0, 0%, 12%);
+  --purple-blue: hsl(223, 100%, 63%);
+  --white: hsl(0, 0%, 94%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.header {
+  width: 100%;
+  min-height: 75px;
+  background-color: var(--black);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    font-family: "Righteous", cursive;
+    color: hsl(0, 0%, 100%);
+  }
+}

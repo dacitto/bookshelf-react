@@ -19,14 +19,6 @@ export const getAll = async () =>
     .then((res) => res.json())
     .then((data) => data.books);
 
-// export const getAll = async () => {
-//   const res = await fetch(`${api}/books`, { headers });
-//   const result = await res.json();
-//   const books = await result.books;
-//   console.log(books);
-//   return await books;
-// };
-
 export const update = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {
     method: "PUT",

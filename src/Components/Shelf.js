@@ -12,17 +12,18 @@ const Shelf = (props) => {
         <h3>loading...</h3>
       ) : (
         <div className="books-container">
-          {props.books.map((book) => {
-            console.log(book.title);
-            return (
-              <Book
-                key={book.id}
-                book={book}
-                changeListener={props.changeListener}
-                setChangeListener={props.setChangeListener}
-              ></Book>
-            );
-          })}
+          {console.log("books" + props.books)}
+          {props.books &&
+            props.books.map((book) => {
+              return (
+                <Book
+                  key={book.id}
+                  book={book}
+                  changeListener={props.changeListener}
+                  setChangeListener={props.setChangeListener}
+                ></Book>
+              );
+            })}
         </div>
       )}
     </div>

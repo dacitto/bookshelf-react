@@ -1,22 +1,14 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+const useFetch = (url, params = {}) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-  // Generate a unique token for storing your bookshelf data on the backend server.
-  let token = localStorage.token;
-  if (!token)
-    token = localStorage.token = Math.random().toString(36).substr(-8);
-  console.log("token  " + token);
-  const headers = {
-    Accept: "application/json",
-    Authorization: token,
-  };
+
   useEffect(() => {
     const abortCont = new AbortController();
     setTimeout(() => {
-      fetch(url, { signal: abortCont.signal, headers: headers })
+      fetch(url, params)
         .then((res) => {
           if (!res.ok) {
             // error coming back from server
@@ -42,7 +34,7 @@ const useFetch = (url) => {
 
     // abort the fetch
     return () => abortCont.abort();
-  }, [url]);
+  }, [url, params]);
 
   return { data, isPending, error };
 };

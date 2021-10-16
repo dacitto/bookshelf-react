@@ -4,10 +4,16 @@ import Shelf from "./Shelf";
 import { Link } from "react-router-dom";
 import * as API from "../API";
 import useFetch from "./usefetch";
-const Home = () => {
-  const api = "https://reactnd-books-api.udacity.com";
+const Home = ({ token }) => {
+  const params = {
+    headers: {
+      Accept: "application/json",
+      Authorization: token,
+    },
+  };
+  const api = "https://reactnd-books-api.udacity.com/books";
   const [changeListener, setChangeListener] = useState(1);
-  const { data, isPending: isLoading, error } = useFetch(`${api}/books`);
+  const { data, isPending: isLoading, error } = useFetch(api, params);
   // if (data) {
   //   localStorage.setItem("books", data.books);
   // }

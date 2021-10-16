@@ -7,14 +7,17 @@ import Home from "./Components/Home";
 import Search from "./Components/Search";
 
 function App() {
+  let token = localStorage.token;
+  if (!token)
+    token = localStorage.token = Math.random().toString(36).substr(-8);
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Home token={token} />
         </Route>
         <Route path="/Search">
-          <Search />
+          <Search token={token} />
         </Route>
       </Switch>
     </Router>

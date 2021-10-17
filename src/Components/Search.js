@@ -26,7 +26,7 @@ const Search = (token) => {
     data,
     isPending: isLoading,
     error,
-  } = useFetch(`${api}/search`, params);
+  } = useFetch(`${api}/search`, params, query);
   return (
     <>
       <Header></Header>
@@ -38,6 +38,7 @@ const Search = (token) => {
           searchHandler(e);
         }}
       ></input>
+
       {data && (
         <Shelf
           title="Search Results"

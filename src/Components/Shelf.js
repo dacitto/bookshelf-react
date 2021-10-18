@@ -4,7 +4,7 @@ const Shelf = (props) => {
   // console.log("props");
   // console.log(props);
   return (
-    <div className="shelf container">
+    <div className="shelf">
       <h1 className="shelf-title">{props.title}</h1>
 
       {props.isloading ? (

@@ -5,7 +5,7 @@ import Shelf from "./Shelf";
 
 const Search = (token) => {
   const api = "https://reactnd-books-api.udacity.com";
-  const [query, setQuery] = useState("react");
+  const [query, setQuery] = useState("");
   const searchHandler = (e) => {
     console.log(e.target.value);
     setQuery(e.target.value);
@@ -28,8 +28,7 @@ const Search = (token) => {
     error,
   } = useFetch(`${api}/search`, params, query);
   return (
-    <>
-      <Header></Header>
+    <main className="container">
       <input
         type="text"
         className="search-bar"
@@ -38,15 +37,19 @@ const Search = (token) => {
           searchHandler(e);
         }}
       ></input>
-
-      {data && (
+      {query === "" && (
+        <h3 style={{ textAlign: "center", fontWeight: 400 }}>
+          Type something to search{" "}
+        </h3>
+      )}
+      {data && query && (
         <Shelf
           title="Search Results"
           books={data.books}
           isloading={isLoading}
         ></Shelf>
       )}
-    </>
+    </main>
   );
 };
 

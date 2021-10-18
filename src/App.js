@@ -4,6 +4,7 @@ import "./Styles/main.scss";
 import { useState, useEffect } from "react";
 import * as API from "./API";
 import Home from "./Components/Home";
+import Header from "./Components/Header";
 import Search from "./Components/Search";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     token = localStorage.token = Math.random().toString(36).substr(-8);
   return (
     <Router>
+      <Header></Header>
       <Switch>
         <Route path="/" exact>
           <Home token={token} />

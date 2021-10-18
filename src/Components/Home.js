@@ -20,8 +20,7 @@ const Home = ({ token }) => {
   // console.log(localStorage["books"]);
 
   return (
-    <>
-      <Header></Header>
+    <main className="container">
       {isLoading && <h1>Loading ...</h1>}
       {data && (
         <>
@@ -55,7 +54,7 @@ const Home = ({ token }) => {
           +
         </Link>
       </div>
-    </>
+    </main>
   );
 };
 

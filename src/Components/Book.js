@@ -11,7 +11,10 @@ const Book = ({ book }) => {
   };
   return (
     <div className="book-card">
-      <img src={book.imageLinks.smallThumbnail} alt={`${book.title}`} />
+      {book.imageLinks && (
+        <img src={book.imageLinks.smallThumbnail} alt={`${book.title}`} />
+      )}
+      {!book.imageLinks && <img />}
       <select
         name="shelf-status"
         id="book-shelf"
@@ -25,6 +28,12 @@ const Book = ({ book }) => {
         <option value="wantToRead">want to read</option>
       </select>
       <h3 className="book-title">{book.title}</h3>
+      {book.authors &&
+        book.authors.map((author) => (
+          <h6 className="book-author" key={book.id + author}>
+            {author}
+          </h6>
+        ))}
     </div>
   );
 };

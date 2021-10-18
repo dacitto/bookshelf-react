@@ -7,7 +7,7 @@ import Home from "./Components/Home";
 import Header from "./Components/Header";
 import Search from "./Components/Search";
 import PageNotFound from "./Components/PageNotFound";
-
+import Footer from "./Components/Footer";
 function App() {
   let token = localStorage.token;
   if (!token)
@@ -26,6 +26,7 @@ function App() {
           <PageNotFound></PageNotFound>
         </Route>
       </Switch>
+      <Footer></Footer>
     </Router>
   );
 }

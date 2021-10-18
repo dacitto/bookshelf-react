@@ -90,13 +90,25 @@ a:active {
 }
 
 // Search page
-.search-bar {
-  display: block;
+.search-container {
   margin: 1.5rem auto;
-  padding: 0.3rem 0.5rem;
-  width: 80%;
-  max-width: 600px;
-  border: 1px solid #22222288;
-  border-radius: 5px;
-  font-size: 1.3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .search-bar {
+    display: inline-block;
+    width: 80%;
+    padding: 0.3rem 0.5rem;
+    max-width: 600px;
+    border: 1px solid #22222288;
+    font-size: 1.3rem;
+    border-radius: 5px;
+  }
+  .back-link {
+    display: flex;
+    font-size: 2rem;
+    line-height: 0;
+    color: var(--purple-blue);
+  }
 }

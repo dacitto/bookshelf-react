@@ -6,7 +6,7 @@ const Book = ({ book }) => {
   const HandleUpdate = /*async*/ (shelf) => {
     update(book, shelf).then(() => {
       setShelfState(shelf);
-      window.location.reload(false);
+      if (book.shelf) window.location.reload(false);
     });
   };
   return (
@@ -21,8 +21,10 @@ const Book = ({ book }) => {
         onChange={(value) => {
           HandleUpdate(value.target.value);
         }}
-        value={shelfState}
+        value={book.shelf}
       >
+        {console.log(book)}
+        {!book.shelf && <option>//</option>}
         <option value="read">read</option>
         <option value="currentlyReading">reading</option>
         <option value="wantToRead">want to read</option>

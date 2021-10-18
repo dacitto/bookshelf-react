@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import useFetch from "./usefetch";
+import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
-
+import { AiOutlineHome, AiOutlineArrowLeft } from "react-icons/ai";
 const Search = (token) => {
   const api = "https://reactnd-books-api.udacity.com";
   const [query, setQuery] = useState("");
@@ -29,14 +29,19 @@ const Search = (token) => {
   } = useFetch(`${api}/search`, params, query);
   return (
     <main className="container">
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="search"
-        onKeyUp={(e) => {
-          searchHandler(e);
-        }}
-      ></input>
+      <div className="search-container">
+        <Link to="/" className="back-link">
+          <AiOutlineArrowLeft />
+        </Link>
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="search"
+          onKeyUp={(e) => {
+            searchHandler(e);
+          }}
+        ></input>
+      </div>
       {query === "" && (
         <h3 style={{ textAlign: "center", fontWeight: 400 }}>
           Type something to search{" "}
@@ -49,6 +54,11 @@ const Search = (token) => {
           isloading={isLoading}
         ></Shelf>
       )}
+      <div className="add-book">
+        <Link to="/" className="link">
+          <AiOutlineHome />
+        </Link>
+      </div>
     </main>
   );
 };

@@ -6,6 +6,7 @@ import * as API from "./API";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 import Search from "./Components/Search";
+import PageNotFound from "./Components/PageNotFound";
 
 function App() {
   let token = localStorage.token;
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/Search">
           <Search token={token} />
+        </Route>
+        <Route>
+          <PageNotFound></PageNotFound>
         </Route>
       </Switch>
     </Router>

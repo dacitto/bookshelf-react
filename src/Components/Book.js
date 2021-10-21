@@ -1,11 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import { update } from "../API";
-const Book = ({ book }) => {
+const Book = ({ book, shelf, setShelf }) => {
   const [shelfState, setShelfState] = useState(book.shelf);
   const HandleUpdate = /*async*/ (shelf) => {
     update(book, shelf).then(() => {
       setShelfState(shelf);
+      //setShelf(shelf);
+      // const localbooks = JSON.parse(localStorage.books);
+      // const objIndex = localbooks.findIndex((obj) => obj.id == book.id);
+      // localbooks[objIndex] = book;
+      // localStorage.removeItem("books");
+      // localStorage.setItem("books", JSON.stringify(localbooks));
       if (book.shelf) window.location.reload(false);
     });
   };
@@ -23,8 +29,7 @@ const Book = ({ book }) => {
         }}
         value={book.shelf}
       >
-        {console.log(book)}
-        {!book.shelf && <option>//</option>}
+        <option value="none">none</option>
         <option value="read">read</option>
         <option value="currentlyReading">reading</option>
         <option value="wantToRead">want to read</option>

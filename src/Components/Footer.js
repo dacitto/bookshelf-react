@@ -12,6 +12,7 @@ const Footer = () => {
           href="https://github.com/dacitto"
           className="github-link"
           target="_blank"
+          rel="noreferrer"
         >
           Salah Eddine Daci <FaGithub className="icon" />
         </a>

@@ -1,26 +1,21 @@
-import React, { setState, useEffect, useState } from "react";
+import React, { setState, useEffect, useState,useContext } from "react";
 import Header from "./Header";
 import Shelf from "./Shelf";
 import { Link } from "react-router-dom";
 import * as API from "../API";
 import useFetch from "./usefetch";
-const Home = ({ token }) => {
-  const params = {
-    headers: {
-      Accept: "application/json",
-      Authorization: token,
-    },
-  };
-  const api = "https://reactnd-books-api.udacity.com/books";
-  const [changeListener, setChangeListener] = useState(1);
-  const { data, isPending: isLoading, error } = useFetch(api, params);
-  // if (data) {
-  //   localStorage.setItem("books", data.books);
-  // }
-  // console.log(localStorage["books"]);
+import {myBookContext} from "../App"
+const Home = () => {
 
+  const context = useContext(myBookContext);
+  const data = context.data;
+  const isLoading = context.isLoading;
+  const error = context.error;
   return (
     <main className="container">
+      {console.log("context")}
+      {console.log(context.data)}
+      {error&&<h1>{error}</h1>}
       {isLoading && <h1>Loading ...</h1>}
       {data && (
         <>
@@ -29,23 +24,17 @@ const Home = ({ token }) => {
             books={data.books.filter(
               (book) => book.shelf === "currentlyReading"
             )}
-            changeListener={changeListener}
-            setChangeListener={setChangeListener}
             isloading={isLoading}
           ></Shelf>
           <Shelf
             title="Read"
             books={data.books.filter((book) => book.shelf === "read")}
             isloading={isLoading}
-            changeListener={changeListener}
-            setChangeListener={setChangeListener}
           ></Shelf>
           <Shelf
             title="To Read"
             books={data.books.filter((book) => book.shelf === "wantToRead")}
             isloading={isLoading}
-            changeListener={changeListener}
-            setChangeListener={setChangeListener}
           ></Shelf>
         </>
       )}

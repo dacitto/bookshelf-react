@@ -15,7 +15,7 @@ function App() {
   let token = localStorage.token;
   if (!token)
     token = localStorage.token = Math.random().toString(36).substr(-8);
-  const [booksData, setBooksData] = useState([]);
+  const [bookStat, setBookStat] = useState(false);
   const api = "https://reactnd-books-api.udacity.com/books";
   const params = {
     headers: {
@@ -23,11 +23,11 @@ function App() {
       Authorization: token,
     },
   };
-  const { data, isPending: isLoading, error } = useFetch(api, params);
+  const { data, isPending: isLoading, error } = useFetch(api, params,bookStat);
   return (
     <Router>
       <Header></Header>
-      <myBookContext.Provider value={{data,isLoading,error}}>
+      <myBookContext.Provider value={{data,isLoading,error,bookStat, setBookStat}}>
         <Switch>
           <Route path="/" exact>
             <Home />

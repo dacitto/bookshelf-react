@@ -1,18 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useContext} from "react";
 import { update } from "../API";
+import {myBookContext} from "../App";
 const Book = ({ book, shelf, setShelf }) => {
+  const [myStat,setStat]=useState(false);
+  const context = useContext(myBookContext);
+  const mybooks = context.data.books;
   const [shelfState, setShelfState] = useState(book.shelf);
   const HandleUpdate = /*async*/ (shelf) => {
     update(book, shelf).then(() => {
       setShelfState(shelf);
-      //setShelf(shelf);
-      // const localbooks = JSON.parse(localStorage.books);
-      // const objIndex = localbooks.findIndex((obj) => obj.id == book.id);
-      // localbooks[objIndex] = book;
-      // localStorage.removeItem("books");
-      // localStorage.setItem("books", JSON.stringify(localbooks));
-      if (book.shelf) window.location.reload(false);
+     // if (book.shelf) window.location.reload(false);
+      setStat(!myStat);
+      context.setBookStat(!context.bookStat)
     });
   };
   return (
@@ -27,7 +27,7 @@ const Book = ({ book, shelf, setShelf }) => {
         onChange={(value) => {
           HandleUpdate(value.target.value);
         }}
-        value={book.shelf}
+        value={shelfState}
       >
         <option value="none">none</option>
         <option value="read">read</option>

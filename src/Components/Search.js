@@ -1,13 +1,10 @@
-import React, { useState,useContext } from "react";
+import React, { useState } from "react";
 import useFetch from "./usefetch";
 import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
 import { AiOutlineHome, AiOutlineArrowLeft } from "react-icons/ai";
 import {myBookContext} from "../App";
 const Search = ({ token }) => {
-  const context = useContext(myBookContext);
-  const myBooks = context.data.books;
-  console.log(myBooks);
   const api = "https://reactnd-books-api.udacity.com";
   const [query, setQuery] = useState("");
   const searchHandler = (e) => {

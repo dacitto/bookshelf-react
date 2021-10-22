@@ -6,6 +6,9 @@ const Book = ({ book, shelf, setShelf }) => {
   const [myStat,setStat]=useState(false);
   const context = useContext(myBookContext);
   const mybooks = context.data.books;
+  const mybooksIds = mybooks.map(book => book.id);
+  let mybooksIdsShelf = {};
+  mybooks.map(book => mybooksIdsShelf[book.id]=book.shelf);
   const [shelfState, setShelfState] = useState(book.shelf);
   const HandleUpdate = /*async*/ (shelf) => {
     update(book, shelf).then(() => {
@@ -14,12 +17,12 @@ const Book = ({ book, shelf, setShelf }) => {
       setStat(!myStat);
       context.setBookStat(!context.bookStat)
     });
-  };
-  return (
-    <div className="book-card">
+  };   
+    return (
+      <div className="book-card">
       {book.imageLinks && (
         <img src={book.imageLinks.smallThumbnail} alt={`${book.title}`} />
-      )}
+        )}
       {!book.imageLinks && <img />}
       <select
         name="shelf-status"
@@ -27,8 +30,8 @@ const Book = ({ book, shelf, setShelf }) => {
         onChange={(value) => {
           HandleUpdate(value.target.value);
         }}
-        value={shelfState}
-      >
+        value={mybooksIdsShelf[book.id]}
+        >
         <option value="none">none</option>
         <option value="read">read</option>
         <option value="currentlyReading">reading</option>
@@ -43,6 +46,7 @@ const Book = ({ book, shelf, setShelf }) => {
         ))}
     </div>
   );
+
 };
 
 export default Book;

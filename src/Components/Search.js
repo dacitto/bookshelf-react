@@ -8,8 +8,8 @@ const Search = ({ token }) => {
   const [query, setQuery] = useState(" ");
   const searchHandler = (e) => {
     console.log(e.target.value);
-    if (e.target.value==="") setQuery(" ")
-    else setQuery(e.target.value)
+    if (e.target.value === "") setQuery(" ");
+    else setQuery(e.target.value);
   };
   const headers = {
     Accept: "application/json",
@@ -48,8 +48,8 @@ const Search = ({ token }) => {
           Type something to search
         </h3>
       )}
-      {error&& <h1>{error}</h1>}
-      {data && query!==" " && (
+      {error && <h1>{error}</h1>}
+      {data && query !== " " && (
         <Shelf
           title="Search Results"
           books={data.books}

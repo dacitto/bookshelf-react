@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Shelf from "./Shelf";
 import { Link } from "react-router-dom";
-import {myBookContext} from "../App"
+import { myBookContext } from "../App";
 const Home = () => {
   const context = useContext(myBookContext);
   const data = context.data;
@@ -9,7 +9,7 @@ const Home = () => {
   const error = context.error;
   return (
     <main className="container">
-      {error&&<h1>{error}</h1>}
+      {error && <h1>{error}</h1>}
       {isLoading && <h1>Loading ...</h1>}
       {data && (
         <>

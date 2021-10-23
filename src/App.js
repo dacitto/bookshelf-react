@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Styles/main.scss";
-import { useState} from "react";
+import { useState } from "react";
 import useFetch from "./Components/usefetch";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
@@ -22,11 +22,13 @@ function App() {
       Authorization: token,
     },
   };
-  const { data, isPending: isLoading, error } = useFetch(api, params,bookStat);
+  const { data, isPending: isLoading, error } = useFetch(api, params, bookStat);
   return (
     <Router>
       <Header></Header>
-      <myBookContext.Provider value={{data,isLoading,error,bookStat, setBookStat}}>
+      <myBookContext.Provider
+        value={{ data, isLoading, error, bookStat, setBookStat }}
+      >
         <Switch>
           <Route path="/" exact>
             <Home />

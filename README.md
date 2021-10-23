@@ -9,11 +9,11 @@ In this application, the main page displays a list of **"shelves"** (i.e. catego
 - **Currently Reading**
 - **Want to Read**
 - **Read**
-  ![Home page](./readme/readme.jpg)
+  ![Home page](./readme/Home.jpg)
 
 The main page also has a link to **_/search_** , a search page that allows you to find books to add to your library.
 
-![Search page](./readme/search.jpg)
+![Search page](./readme/Search.jpg)
 
 if you typed another link the app with redirect you to **error 404 page**
 
@@ -26,5 +26,3 @@ if you typed another link the app with redirect you to **error 404 page**
 ##### 1. `npm install` to install all project dependencies.
 
 ##### 2. `npm start` start the development server in http://localhost:3000/
-
-![Design preview for the Easybank landing page coding challenge](./design/desktop-preview.jpg)

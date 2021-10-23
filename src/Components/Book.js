@@ -6,10 +6,9 @@ const Book = ({ book, shelf, setShelf }) => {
   const [myStat,setStat]=useState(false);
   const context = useContext(myBookContext);
   const mybooks = context.data.books;
-  const mybooksIds = mybooks.map(book => book.id);
   let mybooksIdsShelf = {};
   mybooks.map(book => mybooksIdsShelf[book.id]=book.shelf);
-  const [shelfState, setShelfState] = useState(book.shelf);
+  const [shelfState, setShelfState] = useState(mybooksIdsShelf[book.id]);
   const HandleUpdate = /*async*/ (shelf) => {
     update(book, shelf).then(() => {
       setShelfState(shelf);
@@ -23,14 +22,14 @@ const Book = ({ book, shelf, setShelf }) => {
       {book.imageLinks && (
         <img src={book.imageLinks.smallThumbnail} alt={`${book.title}`} />
         )}
-      {!book.imageLinks && <img />}
+      {!book.imageLinks && <img alt="not found"/>}
       <select
         name="shelf-status"
         id="book-shelf"
         onChange={(value) => {
           HandleUpdate(value.target.value);
         }}
-        value={mybooksIdsShelf[book.id]}
+        value={shelfState}
         >
         <option value="none">none</option>
         <option value="read">read</option>

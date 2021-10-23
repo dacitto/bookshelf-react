@@ -3,13 +3,13 @@ import useFetch from "./usefetch";
 import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
 import { AiOutlineHome, AiOutlineArrowLeft } from "react-icons/ai";
-import {myBookContext} from "../App";
 const Search = ({ token }) => {
   const api = "https://reactnd-books-api.udacity.com";
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(" ");
   const searchHandler = (e) => {
     console.log(e.target.value);
-    setQuery(e.target.value);
+    if (e.target.value==="") setQuery(" ")
+    else setQuery(e.target.value)
   };
   const headers = {
     Accept: "application/json",
@@ -43,12 +43,13 @@ const Search = ({ token }) => {
           }}
         ></input>
       </div>
-      {query === "" && (
+      {query === " " && (
         <h3 style={{ textAlign: "center", fontWeight: 400 }}>
           Type something to search
         </h3>
       )}
-      {data && query && (
+      {error&& <h1>{error}</h1>}
+      {data && query!==" " && (
         <Shelf
           title="Search Results"
           books={data.books}

@@ -2,8 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Styles/main.scss";
-import { useState, useEffect } from "react";
-import * as API from "./API";
+import { useState} from "react";
 import useFetch from "./Components/usefetch";
 import Home from "./Components/Home";
 import Header from "./Components/Header";

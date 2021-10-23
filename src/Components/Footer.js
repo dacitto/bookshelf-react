@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FcLike } from "react-icons/fc";
 import { FaReact, FaGithub } from "react-icons/fa";
 const Footer = () => {

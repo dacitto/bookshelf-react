@@ -1,20 +1,14 @@
-import React, { setState, useEffect, useState,useContext } from "react";
-import Header from "./Header";
+import React, { useContext } from "react";
 import Shelf from "./Shelf";
 import { Link } from "react-router-dom";
-import * as API from "../API";
-import useFetch from "./usefetch";
 import {myBookContext} from "../App"
 const Home = () => {
-
   const context = useContext(myBookContext);
   const data = context.data;
   const isLoading = context.isLoading;
   const error = context.error;
   return (
     <main className="container">
-      {console.log("context")}
-      {console.log(context.data)}
       {error&&<h1>{error}</h1>}
       {isLoading && <h1>Loading ...</h1>}
       {data && (

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Shelf from "./Shelf";
 import { Link } from "react-router-dom";
 import { myBookContext } from "../App";
+import { FcSearch } from "react-icons/fc";
 const Home = () => {
   const context = useContext(myBookContext);
   const data = context.data;
@@ -10,7 +11,12 @@ const Home = () => {
   return (
     <main className="container">
       {error && <h1>{error}</h1>}
-      {isLoading && <h1>Loading ...</h1>}
+      {isLoading && (
+        <div className="icon-holder">
+          <FcSearch className="search-icon" />
+          <h2 className="loading">Loading ...</h2>
+        </div>
+      )}
       {data && (
         <>
           <Shelf

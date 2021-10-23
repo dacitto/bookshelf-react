@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useFetch from "./usefetch";
 import { Link } from "react-router-dom";
 import Shelf from "./Shelf";
+import { FcSearch } from "react-icons/fc";
 import { AiOutlineHome, AiOutlineArrowLeft } from "react-icons/ai";
 const Search = ({ token }) => {
   const api = "https://reactnd-books-api.udacity.com";
@@ -44,9 +45,14 @@ const Search = ({ token }) => {
         ></input>
       </div>
       {query === " " && (
-        <h3 style={{ textAlign: "center", fontWeight: 400 }}>
-          Type something to search
-        </h3>
+        <>
+          <h3 style={{ textAlign: "center", fontWeight: 400 }}>
+            Type something to search
+          </h3>
+          <div className="icon-holder">
+            <FcSearch className="search-icon" />
+          </div>
+        </>
       )}
       {error && <h1>{error}</h1>}
       {data && query !== " " && (

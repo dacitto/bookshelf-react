@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/bookshelf-react/static/css/main.13b20da3.chunk.css",
+    "main.js": "/bookshelf-react/static/js/main.902136c3.chunk.js",
+    "main.js.map": "/bookshelf-react/static/js/main.902136c3.chunk.js.map",
+    "runtime-main.js": "/bookshelf-react/static/js/runtime-main.7eee34a3.js",
+    "runtime-main.js.map": "/bookshelf-react/static/js/runtime-main.7eee34a3.js.map",
+    "static/js/2.eef5d4ad.chunk.js": "/bookshelf-react/static/js/2.eef5d4ad.chunk.js",
+    "static/js/2.eef5d4ad.chunk.js.map": "/bookshelf-react/static/js/2.eef5d4ad.chunk.js.map",
+    "index.html": "/bookshelf-react/index.html",
+    "static/css/main.13b20da3.chunk.css.map": "/bookshelf-react/static/css/main.13b20da3.chunk.css.map",
+    "static/js/2.eef5d4ad.chunk.js.LICENSE.txt": "/bookshelf-react/static/js/2.eef5d4ad.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7eee34a3.js",
+    "static/js/2.eef5d4ad.chunk.js",
+    "static/css/main.13b20da3.chunk.css",
+    "static/js/main.902136c3.chunk.js"
+  ]
+}

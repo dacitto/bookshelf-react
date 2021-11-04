@@ -30,10 +30,10 @@ function App() {
         value={{ data, isLoading, error, bookStat, setBookStat }}
       >
         <Switch>
-          <Route path="/" exact>
+          <Route path="/bookshelf-react/" exact>
             <Home />
           </Route>
-          <Route path="/Search">
+          <Route path="/bookshelf-react/Search">
             <Search token={token} />
           </Route>
           <Route>

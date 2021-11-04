@@ -39,7 +39,7 @@ const Home = () => {
         </>
       )}
       <div className="add-book">
-        <Link to="/search" className="link">
+        <Link to="/bookshelf-react/search" className="link">
           +
         </Link>
       </div>

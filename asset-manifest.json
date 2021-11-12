@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/bookshelf-react/static/css/main.13b20da3.chunk.css",
-    "main.js": "/bookshelf-react/static/js/main.08ef25fa.chunk.js",
-    "main.js.map": "/bookshelf-react/static/js/main.08ef25fa.chunk.js.map",
+    "main.js": "/bookshelf-react/static/js/main.a4229189.chunk.js",
+    "main.js.map": "/bookshelf-react/static/js/main.a4229189.chunk.js.map",
     "runtime-main.js": "/bookshelf-react/static/js/runtime-main.7eee34a3.js",
     "runtime-main.js.map": "/bookshelf-react/static/js/runtime-main.7eee34a3.js.map",
-    "static/js/2.27b377c1.chunk.js": "/bookshelf-react/static/js/2.27b377c1.chunk.js",
-    "static/js/2.27b377c1.chunk.js.map": "/bookshelf-react/static/js/2.27b377c1.chunk.js.map",
+    "static/js/2.169dcb36.chunk.js": "/bookshelf-react/static/js/2.169dcb36.chunk.js",
+    "static/js/2.169dcb36.chunk.js.map": "/bookshelf-react/static/js/2.169dcb36.chunk.js.map",
     "index.html": "/bookshelf-react/index.html",
     "static/css/main.13b20da3.chunk.css.map": "/bookshelf-react/static/css/main.13b20da3.chunk.css.map",
-    "static/js/2.27b377c1.chunk.js.LICENSE.txt": "/bookshelf-react/static/js/2.27b377c1.chunk.js.LICENSE.txt"
+    "static/js/2.169dcb36.chunk.js.LICENSE.txt": "/bookshelf-react/static/js/2.169dcb36.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7eee34a3.js",
-    "static/js/2.27b377c1.chunk.js",
+    "static/js/2.169dcb36.chunk.js",
     "static/css/main.13b20da3.chunk.css",
-    "static/js/main.08ef25fa.chunk.js"
+    "static/js/main.a4229189.chunk.js"
   ]
 }

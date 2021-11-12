@@ -1,6 +1,6 @@
 //import "normalize.css";
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import "./Styles/main.scss";
 import { useState } from "react";
 import useFetch from "./Components/usefetch";
@@ -24,25 +24,25 @@ function App() {
   };
   const { data, isPending: isLoading, error } = useFetch(api, params, bookStat);
   return (
-    <Router>
+    <HashRouter>
       <Header></Header>
       <myBookContext.Provider
         value={{ data, isLoading, error, bookStat, setBookStat }}
       >
         <Switch>
-          <Route path="/bookshelf-react/" exact>
+          <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/bookshelf-react/Search">
+          <Route path="/Search" exact>
             <Search token={token} />
           </Route>
-          <Route path="/bookshelf-react/">
+          <Route>
             <PageNotFound></PageNotFound>
           </Route>
         </Switch>
       </myBookContext.Provider>
       <Footer></Footer>
-    </Router>
+    </HashRouter>
   );
 }
 

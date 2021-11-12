@@ -32,7 +32,7 @@ const Search = ({ token }) => {
   return (
     <main className="container">
       <div className="search-container">
-        <Link to="/bookshelf-react/" className="back-link">
+        <Link to="/" className="back-link">
           <AiOutlineArrowLeft />
         </Link>
         <input
@@ -63,7 +63,7 @@ const Search = ({ token }) => {
         ></Shelf>
       )}
       <div className="add-book">
-        <Link to="/bookshelf-react/" className="link">
+        <Link to="/" className="link">
           <AiOutlineHome />
         </Link>
       </div>

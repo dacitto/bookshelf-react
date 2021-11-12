@@ -9,19 +9,32 @@ In this application, the main page displays a list of **"shelves"** (i.e. catego
 - **Currently Reading**
 - **Want to Read**
 - **Read**
-  ![Home page](./readme/Home.jpg)
 
-The main page also has a link to **_/search_** , a search page that allows you to find books to add to your library.
+<br/>
+<div align='center'>
+<img src='./readme/Home.jpg' style='width:60%;min-width:450px'/>
+</div>
 
-![Search page](./readme/Search.jpg)
 
-if you typed another link the app with redirect you to **error 404 page**
+##### The main page also has a link to **_/search_** , a search page that allows you to find books to add to your library.
 
-![error page](./readme/404.jpg)
+<br/>
+<div align='center'>
+<img src='./readme/Search.jpg' style='width:60%;min-width:450px'/>
+</div>
+
+
+##### if you typed another link the app will redirect you to **error 404 page**
+
+<br/>
+<div align='center'>
+<img src='./readme/404.jpg' style='width:60%;min-width:450px'/>
+</div>
+
 
 ## To run the app you need to:
 
-### In the project directory, you can run:
+open the project directory with cmd, then you can run:
 
 ##### 1. `npm install` to install all project dependencies.
 

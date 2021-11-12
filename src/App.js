@@ -36,7 +36,7 @@ function App() {
           <Route path="/bookshelf-react/Search">
             <Search token={token} />
           </Route>
-          <Route>
+          <Route path="/bookshelf-react/">
             <PageNotFound></PageNotFound>
           </Route>
         </Switch>
